@@ -24,7 +24,7 @@ RUN cp target/smart-hire-backend-*.jar target/app.jar
 # Stage 3: Lightweight Production Runtime Image
 FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
-RUN apk add --no-cache curl
+RUN apk add --no-cache curl && mkdir -p /app/data
 COPY --from=backend-build /app/target/app.jar app.jar
 EXPOSE 8080
 CMD ["sh", "-c", "java -Dserver.port=${PORT:-8080} -jar app.jar"]

@@ -11,7 +11,7 @@ import java.util.Map;
 @RestController
 public class HealthController {
 
-    @GetMapping({"/", "/api/health"})
+    @GetMapping({"/health", "/api/health"})
     public ResponseEntity<ApiResponse<Map<String, Object>>> checkHealth() {
         Map<String, Object> status = new LinkedHashMap<>();
         status.put("service", "SmartHire Recruitment Platform API");

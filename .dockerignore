@@ -1,0 +1,27 @@
+# Git
+.git/
+.gitignore
+.github/
+
+# Environment files & Secrets
+.env
+.env.*
+.env.local
+*.env
+!.env.example
+
+# Frontend artifacts
+smart-hire-frontend/node_modules/
+smart-hire-frontend/dist/
+
+# Backend artifacts
+smart-hire-backend/target/
+smart-hire-backend/data/
+smart-hire-backend/*.log
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

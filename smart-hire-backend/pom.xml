@@ -85,6 +85,13 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- H2 Database (Optional for lightweight/zero-config deployment) -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
 		<!-- Spring AI Core -->
 		<dependency>
 			<groupId>org.springframework.ai</groupId>

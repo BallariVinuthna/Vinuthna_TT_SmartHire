@@ -1,13 +1,29 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
+export const getApiBaseUrl = () => {
+  const envUrl = import.meta.env.VITE_API_BASE_URL;
+  if (envUrl && envUrl.trim()) {
+    let url = envUrl.trim().replace(/\/+$/, '');
+    if (!url.endsWith('/api')) {
+      url += '/api';
+    }
+    return url;
+  }
+  // When running locally in development, use /api proxy
+  if (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+    return '/api';
+  }
+  // Production default Render backend
+  return 'https://vinuthna-tt-backend.onrender.com/api';
+};
 
 const axiosClient = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: getApiBaseUrl(),
   headers: {
     'Content-Type': 'application/json',
   },
 });
+
 
 // Request Interceptor: Attach Bearer token
 axiosClient.interceptors.request.use(

@@ -1,0 +1,27 @@
+# Git
+.git/
+.gitignore
+.github/
+
+# Environment files & Secrets
+.env
+.env.*
+!.env.example
+
+# Maven Build artifacts
+target/
+*.jar
+*.war
+
+# Uploads & local data
+data/
+uploads/
+ai-documents/
+*.log
+logs/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
